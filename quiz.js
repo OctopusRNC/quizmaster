@@ -72,9 +72,22 @@ const quizData = {
 };
 
 const params = new URLSearchParams(window.location.search);
-const subject = params.get("subject");
+const subject = params.get("subject"); // This reads the 'subject' query parameter
 const quizBox = document.getElementById("quiz-box");
 const resultBox = document.getElementById("result");
+
+const quizData = {
+  math: [
+    { q: "What is 5 + 7?", options: ["10", "12", "14", "15"], answer: 1 },
+    { q: "What is 9 x 3?", options: ["27", "21", "30", "18"], answer: 0 },
+    // Add other questions for math
+  ],
+  bollywood: [
+    { q: "Who is known as King Khan?", options: ["Aamir Khan", "Salman Khan", "Shah Rukh Khan", "Saif Ali Khan"], answer: 2 },
+    // Add other Bollywood questions here
+  ],
+  // Add more categories
+};
 
 if (!subject || !quizData[subject]) {
   quizBox.innerHTML = "<p>Invalid subject. Go back to the <a href='index.html'>home page</a>.</p>";
@@ -109,5 +122,6 @@ if (!subject || !quizData[subject]) {
 
   showQuestion();
 }
+
 
 // More JavaScript logic here as discussed in earlier responses...
