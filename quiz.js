@@ -76,33 +76,6 @@ const subject = params.get("subject"); // This reads the 'subject' query paramet
 const quizBox = document.getElementById("quiz-box");
 const resultBox = document.getElementById("result");
 
-  function showQuestion() {
-    const q = quizData[subject][current];
-    let html = `<h2>Question ${current + 1} of ${quizData[subject].length}</h2><p>${q.q}</p>`;
-    q.options.forEach((opt, idx) => {
-      html += `<label><input type='radio' name='option' value='${idx}' /> ${opt}</label><br/>`;
-    });
-    html += `<button onclick='submitAnswer()'>Submit</button>`;
-    quizBox.innerHTML = html;
-  }
-
-  window.submitAnswer = function () {
-    const selected = document.querySelector("input[name='option']:checked");
-    if (!selected) return alert("Please select an answer.");
-    if (parseInt(selected.value) === quizData[subject][current].answer) score++;
-    current++;
-    if (current < quizData[subject].length) showQuestion();
-    else showResult();
-  };
-
-  function showResult() {
-    quizBox.style.display = "none";
-    resultBox.classList.remove("hidden");
-    resultBox.innerHTML = `<h2>Your Score: ${score} / ${quizData[subject].length}</h2><a href='index.html'>Back to Home</a>`;
-  }
-
-  showQuestion();
-}
-
+  
 
 // More JavaScript logic here as discussed in earlier responses...
