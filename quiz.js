@@ -76,12 +76,6 @@ const subject = params.get("subject"); // This reads the 'subject' query paramet
 const quizBox = document.getElementById("quiz-box");
 const resultBox = document.getElementById("result");
 
-if (!subject || !quizData[subject]) {
-  quizBox.innerHTML = "<p>Invalid subject. Go back to the <a href='index.html'>home page</a>.</p>";
-} else {
-  let current = 0;
-  let score = 0;
-
   function showQuestion() {
     const q = quizData[subject][current];
     let html = `<h2>Question ${current + 1} of ${quizData[subject].length}</h2><p>${q.q}</p>`;
